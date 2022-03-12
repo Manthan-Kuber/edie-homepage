@@ -1,6 +1,9 @@
 :root {
   --ff-poppins: "Poppins", sans-serif;
   --ff-Heebo: "Heebo", sans-serif;
+  --primary-red: #eb5757;
+  --primary-green: #27ae60;
+  --primary-blue: #2d9cdb;
 }
 
 *,
@@ -16,6 +19,10 @@
 html {
   font-size: 62.5%;
   height: 100%;
+  scroll-behavior: smooth;
+}
+
+li {
   list-style: none;
 }
 
@@ -26,8 +33,7 @@ a:visited {
 }
 
 body {
-  margin: clamp(1.5rem , 3.5vw + 0.3rem , 5.5rem);
-  
+  margin: clamp(1.5rem, 3.5vw + 0.3rem, 5.5rem);
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -50,15 +56,41 @@ footer {
   width: 30px;
   height: 3px;
   background-color: #000;
-  display: block;
-  transition: all ease-in-out 0.25s;
   border-radius: 100px;
+  transition: all ease-in-out 0.25s;
 }
 
-.nav-container {
+.burger-menu.open > span:first-child {
+  transform: rotate(45deg) translateY(11.5px) ;
+}
+
+.burger-menu.open >span:nth-child(2){
+  opacity: 0 ;
+  width: 0;
+  transform: translateX(50vw);
+}
+
+.burger-menu.open >span:last-child{
+  transform: rotate(-45deg) translateY(-11.5px) ;
+}
+
+nav{
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: white;
+  top: 0;
+  left:-100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  transition: left 0.25s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+nav.open {
+  left:0;
+  transition: left 0.25s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
 .nav-logo {
@@ -67,18 +99,28 @@ footer {
   font-weight: 800;
 }
 
-.menu-container {
+.nav-links {
   font: 2.4rem var(--ff-poppins);
-  display: none;
 }
 
-@media (min-width: 64em) {
+.menu-container{
+  display: grid;
+  gap:2rem;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* @media (min-width: 64em) {
   .menu-container {
     display: flex;
     justify-content: space-evenly;
-    gap: 3ch;
+    gap: clamp(2rem, 2.5vw + 0.5rem, 5.5rem);
   }
   .burger-menu {
     display: none;
   }
-}
+} */

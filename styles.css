@@ -84,12 +84,12 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: right 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: right 0.25s cubic-bezier(0.47, 0, 0.74, 0.71);
 }
 
 nav.open {
   right: 0;
-  transition: right 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: right 0.25s cubic-bezier(0.47, 0, 0.74, 0.71);
 }
 
 .nav-logo {
@@ -111,21 +111,104 @@ header {
   align-items: center;
 }
 
-@media (min-width: 60em) {
+@media (min-width: 64em) {
   .burger-menu {
     display: none;
   }
-  nav{
+  nav {
     position: revert;
     width: revert;
     height: revert;
   }
-  .nav-container{
+  .nav-container {
     display: flex;
     justify-content: space-between;
   }
-  .menu-container{
+  .menu-container {
     display: flex;
     /* 2rem gap already given for grid */
+  }
+}
+
+.home {
+  font-family: var(--ff-poppins);
+  font-weight: 500;
+  margin-top: clamp(4.8rem, 6vw + 2.51rem, 9.6rem);
+}
+
+.home h6 {
+  color: var(--primary-blue);
+  font-size: clamp(1.2rem, 1.3vw + 0.5rem, 1.8rem);
+  margin-bottom: clamp(0.8rem, 1vw + 0.4rem, 1.6rem);
+}
+
+.home h4 {
+  color: #333;
+  font-size: clamp(2.4rem, 4.2vw + 0.5rem, 4.8rem);
+  max-width: 18ch;
+}
+
+.home img {
+  width: 100%;
+  border-radius: 16px;
+  margin-block: clamp(2.1rem, 3vw + 1rem, 4.2rem);
+  object-fit: contain;
+}
+
+.home p {
+  color: #4f4f4f;
+  font-weight: 400;
+  font-size: clamp(1.2rem, 1.3vw + 0.5rem, 1.8rem);
+  margin-block: clamp(3.3rem, 2.5vw + 0.5rem, 4.2rem);
+  max-width: 33ch;
+}
+
+.email-container {
+  display: flex;
+  background-color: #f2f2f2;
+  width: fit-content;
+  border-radius: 10px;
+  padding-block: 4px;
+  padding-right: 1px;
+  width: min(35rem, 80%);
+}
+
+.email-container input {
+  width: min(35rem, 80%);
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 11px;
+  font: inherit;
+  font-size: clamp(1.4rem, 1.3vw + 0.5rem, 1.8rem);
+}
+
+.email-container button {
+  border: none;
+  border-radius: 10px;
+  padding: 11px 28px;
+  font: inherit;
+  font-size: clamp(1.4rem, 1.3vw + 0.5rem, 1.8rem);
+  color: white;
+  background-color: var(--primary-blue);
+}
+.home p + p {
+  margin-block: revert;
+}
+
+.home h6,
+.home h4,
+.home p,
+.home label {
+  margin-left: 5%;
+}
+
+@media (min-width: 64em) {
+  .home h6,
+  .home h4,
+  .home p,
+  .home label {
+    margin-left: 22.5rem;
   }
 }

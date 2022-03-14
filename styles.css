@@ -328,6 +328,7 @@ header {
 @media (min-width: 55em) {
   .works h4 {
     margin-bottom: 2rem;
+    margin-left: 7%;
   }
   .works-wrapper {
     grid-template-columns: repeat(2, fit-content(55rem));
@@ -362,5 +363,53 @@ header {
   .see-more{
     margin-top: revert;
     align-self: flex-end;
+    margin-right:18% ; 
+  }
+}
+
+.clients{
+  margin: 0 12% 20rem;
+}
+
+.clients h6{
+  color: var(--primary-red);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.clients h3{
+  font-size: 3.6rem;
+  max-width: 14ch;
+}
+
+.clients p{
+  color: #4F4F4F;
+  font-size: 1.6rem;
+  max-width: 27ch;
+  margin-bottom:3.6rem;
+}
+
+.clients img{
+  border-radius: 24px;
+  max-width: 100%;
+}
+
+.client-img-wrapper {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2,1fr);
+}
+
+.client-img-wrapper img:first-child{
+  grid-row:1/3;
+  justify-self: flex-end;
+  align-self: center;
+}
+
+@media (min-width:64em) {
+  .clients{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    align-items:center ;
   }
 }

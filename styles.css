@@ -88,16 +88,16 @@ nav {
   position: absolute;
   background: white;
   top: 0;
-  right: -100%;
+  left: -100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: right 0.25s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  transition: left 0.25s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
 
 nav.open {
-  right: 0;
-  transition: right 0.25s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  left: 0;
+  transition: left 0.25s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
 
 .nav-container {
